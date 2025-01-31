@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  htmljson-converter:
+    image: kommuneforlaget/handboker-migration:1.0.0
+    ports:
+      - "3000:3000"
+    extra_hosts: 
+      - "host.docker.internal:host-gateway"
+    env_file:
+      - .env.production 
+    volumes:
+      - .:/app 
